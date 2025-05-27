@@ -230,6 +230,18 @@ function checkCollisions() {
     }
   }
 }
+///BOTON VR
+const controller = renderer.xr.getController(0);
+scene.add(controller);
+
+controller.addEventListener('selectstart', () => {
+  if (gameOver) {
+    resetGame();
+    startGame();
+  } else {
+    startGame();
+  }
+});
 
 // ⬇ ANIMATE con cámara detrás
 function animate() {
