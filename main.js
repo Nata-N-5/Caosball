@@ -24,6 +24,16 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 const pointLight = new THREE.PointLight(0xffffff, 1);
 pointLight.position.set(0, 10, 10);
 scene.add(pointLight);
+//SPRITEGAME OVER
+const textureLoader = new THREE.TextureLoader();
+const gameOverTexture = textureLoader.load('gameover.jpg');
+const gameOverMaterial = new THREE.SpriteMaterial({ map: gameOverTexture });
+const gameOverSprite = new THREE.Sprite(gameOverMaterial);
+gameOverSprite.scale.set(6, 4, 0); // tamaño del sprite
+gameOverSprite.position.set(0, 1.5, -1); // posición frente a la cámara
+gameOverSprite.visible = false; // inicialmente oculto
+scene.add(gameOverSprite);
+
 
 // Bola del jugador
 const playerColor = 0x0000ff;
@@ -225,6 +235,7 @@ function checkCollisions() {
     if (ballBox.intersectsBox(obsBox)) {
       if (obs.userData.color !== playerColor) {
         showGameOver();
+        gameOverSprite.visible = true; 
         break;
       }
     }
