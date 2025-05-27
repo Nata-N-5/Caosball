@@ -29,7 +29,7 @@ const textureLoader = new THREE.TextureLoader();
 const gameOverTexture = textureLoader.load('gameover.jpg');
 const gameOverMaterial = new THREE.SpriteMaterial({ map: gameOverTexture });
 const gameOverSprite = new THREE.Sprite(gameOverMaterial);
-gameOverSprite.scale.set(6, 4, 0); // tamaño del sprite
+gameOverSprite.scale.set(5, 3, 0); // tamaño del sprite
 gameOverSprite.position.set(0, 1.2, -3); // posición frente a la cámara
 gameOverSprite.visible = false; // inicialmente oculto
 scene.add(gameOverSprite);
@@ -204,7 +204,7 @@ function resetGame() {
   elapsedTime = 0;
   music.pause();
   music.currentTime = 0;
-  //gameOverSprite.visible = true; 
+
 }
 
 function startGame() {
