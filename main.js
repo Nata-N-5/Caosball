@@ -179,6 +179,7 @@ gameOverContainer.appendChild(timeText);
 document.body.appendChild(gameOverContainer);
 
 function showGameOver() {
+  gameOverSprite.visible = true; 
   gameOver = true;
   started = false;
   elapsedTime = performance.now() - startTime;
@@ -203,12 +204,11 @@ function resetGame() {
   elapsedTime = 0;
   music.pause();
   music.currentTime = 0;
-  gameOverSprite.visible = true; 
+  //gameOverSprite.visible = true; 
 }
 
 function startGame() {
   if (!started && !gameOver) {
-    gameOverSprite.visible = false; 
     started = true;
     velocityY = 0.2;
     startTime = performance.now();
