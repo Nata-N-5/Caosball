@@ -203,11 +203,12 @@ function resetGame() {
   elapsedTime = 0;
   music.pause();
   music.currentTime = 0;
-  gameOverSprite.visible = false; 
+  gameOverSprite.visible = true; 
 }
 
 function startGame() {
   if (!started && !gameOver) {
+    gameOverSprite.visible = false; 
     started = true;
     velocityY = 0.2;
     startTime = performance.now();
@@ -236,7 +237,7 @@ function checkCollisions() {
     if (ballBox.intersectsBox(obsBox)) {
       if (obs.userData.color !== playerColor) {
         showGameOver();
-        gameOverSprite.visible = true; 
+        
         break;
       }
     }
