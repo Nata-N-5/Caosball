@@ -208,6 +208,7 @@ function resetGame() {
 }
 
 function startGame() {
+  gameOverSprite.visible = false; 
   if (!started && !gameOver) {
     started = true;
     velocityY = 0.2;
