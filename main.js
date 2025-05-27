@@ -253,7 +253,7 @@ controller.addEventListener('selectstart', () => {
     startGame();
   }
 });
-
+cameraHolder.add(gameOverSprite)
 // ⬇ ANIMATE con cámara detrás
 function animate() {
   if (started && !gameOver) {
